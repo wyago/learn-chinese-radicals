@@ -27,6 +27,11 @@ var Lesson = (function () {
     function success() {
         let word = state.words[0];
 
+
+        let chinese = word.simplified;
+        if (word.variants) {
+            chinese += " or " + word.variants;
+        }
         return h("div.row.centered-column", [
             h("div.centered-column", {
                 styles: {
@@ -34,7 +39,7 @@ var Lesson = (function () {
                 }
             }, h("span.chinese", {
                 key: success
-            }, word.simplified)),
+            }, chinese)),
             h("div.success.meaning", {
                 classes: {
                     viewing: explain
@@ -111,13 +116,18 @@ var Lesson = (function () {
 
         let hint =
             h("div.explanation", {
-                    classes: {
-                        viewing: explain || !word.swapWith || word.swapWith == 1
-                    }
-                }, word.type == "pronunciation" ?
+                classes: {
+                    viewing: explain || !word.swapWith || word.swapWith == 1
+                }
+            }, word.type == "pronunciation" ?
                     word.pronunciation :
                     word.meanings.map((x, i) => h("span.meaning", { key: i }, x)));
         explain = false;
+
+        let chinese = word.simplified;
+        if (word.variants) {
+            chinese += " or " + word.variants;
+        }
 
         let whatIs = word.type == "pronunciation" ? "Pronunciation" : "Meaning";
         return h("div.row.centered-column", [
@@ -128,8 +138,8 @@ var Lesson = (function () {
             }, [hint,
                 h("span.chinese", {
                     key: practice
-                }, word.simplified)
-                ]),
+                }, chinese)
+            ]),
             h("div", whatIs),
             h("input.answer", {
                 onkeydown: submitAnswer,
