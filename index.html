@@ -475,7 +475,7 @@ window.addEventListener('load', function () {
             localStorage.setItem("state", JSON.stringify(state));
             initialize();
         });
-        request.open("GET", "/items.json");
+        request.open("GET", "items.json");
         request.send();
     } else {
         state = JSON.parse(state);
