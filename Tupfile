@@ -1,0 +1,3 @@
+: src/** |> cpp src/index.html > index.tmp.html |> index.tmp.html
+
+: index.tmp.html |> findstr /v /b /c:"#" index.tmp.html > index.html |> index.html
