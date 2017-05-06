@@ -5,6 +5,8 @@ you answer correctly.
 
 I (among others) have found that learning radicals makes it much easier to memorize new characters, in the same way it's easier to remember large numbers if you already know about digits (and even moreso, pairs or triplets of digits).
 
+I recommend learning some pronunciation from somewhere else so you can pronounce characters to yourself as you learn. I have been using ninchanese.com for that.
+
 ## Radical list is taken from here:
 
 http://www.hackingchinese.com/kickstart-your-character-learning-with-the-100-most-common-radicals/
